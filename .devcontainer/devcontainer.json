@@ -9,14 +9,15 @@
 	"features": {
 		"ghcr.io/devcontainers/features/java:1": {
 			"version": "17"
-		}
+		},
+		"ghcr.io/devcontainers/features/docker-in-docker:2.2.0": {}
 	},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "uname -a",
+	// "postCreateCommand": "export DOCKER0_ADDRESS=$(ip route | awk '/docker0/ {print $9}')",
 
 	// Configure tool-specific properties.
 	"customizations": {
@@ -25,17 +26,23 @@
 				"streetsidesoftware.code-spell-checker",
 				"humao.rest-client",
 				"vmware.vscode-boot-dev-pack",
-				"mhutchie.git-graph"
+				"mhutchie.git-graph",
+				"GitHub.vscode-pull-request-github"
 			],
 			"settings": {
 				"cSpell.words": [
 					"micrometertracer",
-					"shibadog"
+					"shibadog",
+					"otlp"
 				]
 			}
 		}
-	}
+	},
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
+
+	"mounts": [
+		"source=${localEnv:USERPROFILE}/.m2,target=/home/vscode/.m2,type=bind,consistency=cached"
+	]
 }

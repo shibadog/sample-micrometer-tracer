@@ -1,0 +1,36 @@
+server:
+  port: 8081
+  tomcat:
+    accesslog:
+      enabled: true
+      directory: /dev
+      prefix: stdout
+      buffered: false
+      suffix: 
+      file-date-format: 
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - "*"
+
+  tracing:
+    enabled: true
+    propagation:
+      type: w3c
+
+  otlp:
+    tracing:
+      endpoint: http://localhost:8200/v1/traces
+    metrics:
+      export:
+        enabled: true
+        url: http://localhost:8200/v1/metrics
+        resource-attributes:
+          '[service.name]': "@project.name@"
+
+spring:
+  application:
+    name: @project.name@
