@@ -1,13 +1,13 @@
-package com.github.shibadog.sample.micrometertracer;
+package com.github.shibadog.sample.micrometertracer.backend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SampleMicrometerTracerApplication {
+public class BackendApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SampleMicrometerTracerApplication.class, args);
+		SpringApplication.run(BackendApplication.class, args);
 	}
 
 }

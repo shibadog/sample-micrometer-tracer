@@ -26,7 +26,13 @@
 				"humao.rest-client",
 				"vmware.vscode-boot-dev-pack",
 				"mhutchie.git-graph"
-			]
+			],
+			"settings": {
+				"cSpell.words": [
+					"micrometertracer",
+					"shibadog"
+				]
+			}
 		}
 	}
 
