@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.github.shibadog.sample</groupId>
-	<artifactId>micromater-tracer</artifactId>
+	<artifactId>micrometer-tracer</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>sample-micromater-tracer</name>
+	<name>sample-micrometer-tracer</name>
 	<description>Demo project for Spring Boot</description>
 	<packaging>pom</packaging>
 

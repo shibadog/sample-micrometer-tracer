@@ -1,10 +1,10 @@
-package com.github.shibadog.sample.micromatertracer;
+package com.github.shibadog.sample.micrometertracer;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SampleMicromaterTracerApplicationTests {
+class SampleMicrometerTracerApplicationTests {
 
 	@Test
 	void contextLoads() {
