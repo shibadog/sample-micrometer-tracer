@@ -24,7 +24,8 @@
 			"extensions": [
 				"streetsidesoftware.code-spell-checker",
 				"humao.rest-client",
-				"vmware.vscode-boot-dev-pack"
+				"vmware.vscode-boot-dev-pack",
+				"mhutchie.git-graph"
 			]
 		}
 	}
