@@ -27,13 +27,18 @@
 				"humao.rest-client",
 				"vmware.vscode-boot-dev-pack",
 				"mhutchie.git-graph",
-				"GitHub.vscode-pull-request-github"
+				"GitHub.vscode-pull-request-github",
+				"DavidAnson.vscode-markdownlint",
+				"yzhang.markdown-all-in-one"
 			],
 			"settings": {
 				"cSpell.words": [
+					"devcontainer",
 					"micrometertracer",
+					"opentelemetry",
+					"otlp",
 					"shibadog",
-					"otlp"
+					"zipkin"
 				]
 			}
 		}
