@@ -33,11 +33,16 @@
 			],
 			"settings": {
 				"cSpell.words": [
+					"Anson",
 					"devcontainer",
+					"devcontainers",
+					"humao",
+					"mhutchie",
 					"micrometertracer",
 					"opentelemetry",
 					"otlp",
 					"shibadog",
+					"yzhang",
 					"zipkin"
 				]
 			}
