@@ -1,17 +1,15 @@
 package com.github.shibadog.sample.micrometertracer.backend;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import ch.qos.logback.access.tomcat.LogbackValve;
-import io.opentelemetry.exporter.otlp.http.trace.OtlpHttpSpanExporter;
-import io.opentelemetry.sdk.trace.export.SpanExporter;
+import io.micrometer.observation.ObservationRegistry;
+import io.micrometer.observation.aop.ObservedAspect;
 
 
 @SpringBootApplication
@@ -29,16 +27,9 @@ public class BackendApplication {
         return tomcatServletWebServerFactory;
     }
 
-	@Configuration
-	public static class AppConfig {
-		@Bean
-		SpanExporter otlpHttpSpanExporter(
-				@Value("${management.otlp.tracing.endpoint}") String endpoint
-		) {
-			return OtlpHttpSpanExporter.builder()
-					.setEndpoint(endpoint)
-					.build();
-		}
+	@Bean
+	ObservedAspect observedAspect(ObservationRegistry observationRegistry) {
+		return new ObservedAspect(observationRegistry);
 	}
 
 	@RestController
