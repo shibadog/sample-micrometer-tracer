@@ -1,12 +1,13 @@
+logging:
+  level:
+    '[io.micrometer.tracing]': trace
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] [%X{traceId}-%X{spanId}] %-5level %logger{36} - %msg%n"
+
 server:
   tomcat:
     accesslog:
       enabled: true
-      directory: /dev
-      prefix: stdout
-      buffered: false
-      suffix: 
-      file-date-format: 
 
 management:
   endpoints:
