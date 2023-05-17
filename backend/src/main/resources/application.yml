@@ -18,19 +18,15 @@ management:
   tracing:
     enabled: true
     propagation:
-      type: w3c
+      type: b3
     sampling:
       probability: 1.0
 
-  otlp:
+  zipkin:
     tracing:
-      endpoint: http://localhost:8200/v1/traces
-    metrics:
-      export:
-        enabled: true
-        url: http://localhost:8200/v1/metrics
-        resource-attributes:
-          '[service.name]': "@project.name@"
+      connect-timeout: 2s
+      read-timeout: 5s
+      endpoint: http://localhost:9411/api/v2/spans
 
 spring:
   application:
