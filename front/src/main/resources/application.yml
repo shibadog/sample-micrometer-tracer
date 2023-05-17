@@ -18,7 +18,8 @@ management:
 
   tracing:
     enabled: true
-    propagation:
+    propagation: 
+      type: w3c
     sampling:
       probability: 1.0
 
