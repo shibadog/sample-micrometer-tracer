@@ -1,0 +1,5 @@
+POST http://localhost:5080/api/default/default/_json HTTP/1.1
+Authorization: Basic cm9vdEBleGFtcGxlLmNvbTpLQ3ZVMXkzaFlDYXY2M3l2
+Content-Type: application/json
+
+[{ "message": "aaaa" }]
