@@ -25,13 +25,12 @@ management:
 
   otlp:
     tracing:
-      endpoint: http://localhost:8200/v1/traces
+      endpoint: http://localhost:5080/api/default/traces
+      basic: "Basic cm9vdEBleGFtcGxlLmNvbTpLQ3ZVMXkzaFlDYXY2M3l2"
+  prometheus:
     metrics:
       export:
         enabled: true
-        url: http://localhost:8200/v1/metrics
-        resource-attributes:
-          '[service.name]': "@project.name@"
 
 spring:
   application:

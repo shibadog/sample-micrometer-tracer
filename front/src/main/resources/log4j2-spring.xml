@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout
+                    pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} %highlight{%-5level}[%style{%t}{bright,blue}] %style{%C}{bright,yellow}: %m%n"/>
+        </Console>
+        <http name="http" url="http://localhost:5080/api/default/default/_json">
+            <headers name="Authorization" value="Basic cm9vdEBleGFtcGxlLmNvbTpLQ3ZVMXkzaFlDYXY2M3l2" />
+            <JsonLayout properties="true" />
+        </http>
+    </Appenders>
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="http" />
+        </Root>
+    </Loggers>
+</configuration>
