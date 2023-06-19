@@ -4,7 +4,7 @@
 
 トレースの動きを調べるためにいろいろ試すためのやつ。
 
-前提として、vscodeでdevcontainerを使って、環境を作成し、 docker composeで起動した elastic stack に対してtrace情報を詰め込むようにしている。
+そのまま使って、openobserveを試したもの。
 
 ![こんな環境](./dev/doc/images/overview.drawio.svg)
 
@@ -16,13 +16,36 @@
 PS> devcontainer open .
 ```
 
-### 2. elastic stackをcomposeで起動する
+### 2. openobserveだけをいったん立ち上げる
+
+``` bash
+$ docker compose up -d openobserve
+```
+
+### 3. openobservveの画面から認証情報を取得
+
+※ ID/PASSは `root@example.com/openobserve`
+
+![](dev/doc/images/openobserve_sessyu.png)
+
+各種設定ファイルに転記
+
+* Logs
+  * `./backend/src/main/resources/log4j2-spring.xml`
+  * `./front/src/main/resources/log4j2-spring.xml`
+* Metrics
+  * `./dev/docker/prometheus/prometheus.yml`
+* Traces
+  * `./backend/src/main/resources/application.yml`
+  * `./front/src/main/resources/application.yml`
+
+### 4. 残りのコンテナを立ち上げる
 
 ``` bash
 $ docker compose up -d
 ```
 
-### 3. アプリケーションを起動する
+### 5. アプリケーションを起動する
 
 vscodeの spring boot dashboard から一括起動
 
@@ -32,14 +55,19 @@ vscodeの spring boot dashboard から一括起動
 
 http://localhost:8080/test を開く
 
-## kibanaの見た目
+## openobserveの見た目
 
-kibanaのAPMのtraceを見ることで、トレース情報を参照することができる。
+openobserveでは、Logs/Metrics/Traceを一か所で見れる。
 
-![](./dev/doc/images/screenshot_trace_list.png)
+![](./dev/doc/images/openobserve_logs.jpeg)
 
-![](./dev/doc/images/screenshot_trace.png)
+![](./dev/doc/images/openobserve_metrics.jpeg)
+
+![](./dev/doc/images/openobserve_traces.jpeg)
 
 ## 参考資料
 
-https://docs.spring.io/spring-boot/docs/3.0.5/reference/htmlsingle/#actuator.micrometer-tracing
+* https://openobserve.ai/docs/quickstart/
+* https://logging.apache.org/log4j/2.x/manual/layouts.html#JSONLayout
+* https://logging.apache.org/log4j/2.x/manual/json-template-layout.html
+* https://prometheus.io/docs/practices/remote_write/

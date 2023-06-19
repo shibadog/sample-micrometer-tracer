@@ -6,8 +6,8 @@
                     pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} %highlight{%-5level}[%style{%t}{bright,blue}] %style{%C}{bright,yellow}: %m%n"/>
         </Console>
         <http name="http" url="http://localhost:5080/api/default/default/_json">
-            <headers name="Authorization" value="Basic cm9vdEBleGFtcGxlLmNvbTpLQ3ZVMXkzaFlDYXY2M3l2" />
-            <JsonLayout properties="true" />
+            <Property name="Authorization" value="Basic cm9vdEBleGFtcGxlLmNvbTpRWmRGSWpjcGlMNWZIT3ho" /><!-- openobserve参照して要書きかえ -->
+            <JsonTemplateLayout eventTemplateUri="classpath:EcsLayoutCustom.json"/>
         </http>
     </Appenders>
     <Loggers>
