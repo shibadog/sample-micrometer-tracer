@@ -1,6 +1,4 @@
 logging:
-  level:
-    '[io.micrometer.tracing]': trace
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] [%X{traceId}-%X{spanId}] %-5level %logger{36} - %msg%n"
 
@@ -26,7 +24,7 @@ management:
   otlp:
     tracing:
       endpoint: http://localhost:5080/api/default/traces
-      basic: "Basic cm9vdEBleGFtcGxlLmNvbTpLQ3ZVMXkzaFlDYXY2M3l2"
+      basic: "Basic cm9vdEBleGFtcGxlLmNvbTpRWmRGSWpjcGlMNWZIT3ho" # openobserve参照して要書きかえ
   prometheus:
     metrics:
       export:

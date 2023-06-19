@@ -1,5 +1,5 @@
 POST http://localhost:5080/api/default/default/_json HTTP/1.1
-Authorization: Basic cm9vdEBleGFtcGxlLmNvbTpLQ3ZVMXkzaFlDYXY2M3l2
+Authorization: Basic cm9vdEBleGFtcGxlLmNvbTpRWmRGSWpjcGlMNWZIT3ho
 Content-Type: application/json
 
-[{ "message": "aaaa" }]
+[{"@timestamp":"2023-06-19T01:48:09.728Z","ecs.version":"1.2.0","log.level":"INFO","message":"Root WebApplicationContext: initialization completed in 4247 ms","process.thread.name":"main","log.logger":"org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext"}]
