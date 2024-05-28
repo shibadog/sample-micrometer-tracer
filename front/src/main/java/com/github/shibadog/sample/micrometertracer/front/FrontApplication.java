@@ -17,7 +17,6 @@ import ch.qos.logback.access.tomcat.LogbackValve;
 import io.micrometer.observation.Observation;
 import io.micrometer.observation.ObservationRegistry;
 import io.micrometer.observation.annotation.Observed;
-import io.micrometer.observation.aop.ObservedAspect;
 import lombok.extern.slf4j.Slf4j;
 
 @SpringBootApplication
@@ -34,11 +33,6 @@ public class FrontApplication {
         tomcatServletWebServerFactory.addContextValves(new LogbackValve());
         return tomcatServletWebServerFactory;
     }
-
-	@Bean
-	ObservedAspect observedAspect(ObservationRegistry observationRegistry) {
-		return new ObservedAspect(observationRegistry);
-	}
 
 	@Service
 	@Slf4j

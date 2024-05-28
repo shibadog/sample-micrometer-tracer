@@ -8,8 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import ch.qos.logback.access.tomcat.LogbackValve;
-import io.micrometer.observation.ObservationRegistry;
-import io.micrometer.observation.aop.ObservedAspect;
 
 
 @SpringBootApplication
@@ -26,11 +24,6 @@ public class BackendApplication {
         tomcatServletWebServerFactory.addContextValves(new LogbackValve());
         return tomcatServletWebServerFactory;
     }
-
-	@Bean
-	ObservedAspect observedAspect(ObservationRegistry observationRegistry) {
-		return new ObservedAspect(observationRegistry);
-	}
 
 	@RestController
 	public static class DemoController {

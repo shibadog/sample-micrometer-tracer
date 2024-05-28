@@ -3,8 +3,6 @@ logging:
     '[io.micrometer.tracing]': trace
     '[io.opentelemetry.exporter.zipkin]': trace
     '[zipkin2]': trace
-  pattern:
-    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] [%X{traceId}-%X{spanId}] %-5level %logger{36} - %msg%n"
 
 server:
   tomcat:
